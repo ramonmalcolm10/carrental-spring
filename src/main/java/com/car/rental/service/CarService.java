@@ -1,5 +1,9 @@
 package com.car.rental.service;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import com.car.rental.model.CarDetails;
@@ -24,9 +28,13 @@ public class CarService {
 		}
 	}
 	
-	public Iterable<CarDetails> getAllCars() {
+	public Page<CarDetails> getAllCars(Pageable pageable) {
 		
-		return carDetailsRepository.findAll();
+		 
+		//Pageable firstPageWithTwoElements = PageRequest.of(0, 4);
+		
+		
+		return carDetailsRepository.findAll(pageable);
 	}
 	
 }
