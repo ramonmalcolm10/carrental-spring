@@ -123,307 +123,55 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col s12 m6">
+                <div class="col s12 m6" th:each="car : ${cars}">
                     <div class="card">
                         <div class="card-image">
-                            <img src="public/img/car_1.jpeg" height="500">
+                        
+                        <img th:src="*{'data:image/png;base64,'+car.imgUtility}" th:alt="${car.carName}" height="500"/>
+                        
+                      
+                            
                             <span class="card-title">Card Title</span>
                             <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
                         </div>
-                        <div class="card-content">
+                        <div class="card-content" >
                             <table class="striped center">
                                 <tbody>
                                     <tr>
-                                        <td>Experience</td>
-                                        <td>3.75/5</td>
-                                    </tr>
-                                    <tr>
                                         <td>Price</td>
-                                        <td>$5,000.00 per day</td>
+                                        <td th:text="${car.price}">$5,000.00 per day</td>
                                     </tr>
                                     <tr>
                                         <td>Deposit</td>
-                                        <td>No</td>
+                                        <td th:text="${car.deposit}">No</td>
                                     </tr>
                                     <tr>
                                         <td>Capacity</td>
-                                        <td>5 person(s)</td>
+                                        <td th:text="${car.capacity}">5 person(s)</td>
                                     </tr>
                                     <tr>
                                         <td>Min Days</td>
-                                        <td>2</td>
+                                        <td th:text="${car.minDays}">2</td>
                                     </tr>
                                     <tr>
                                         <td>Condition</td>
-                                        <td>Good</td>
+                                        <td th:text="${car.carCondition}">Good</td>
                                     </tr>
                                     <tr>
                                         <td>Transmission</td>
-                                        <td>Manual</td>
+                                        <td th:text="${car.transmission}">Manual</td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
                     </div>
                 </div>
-                <div class="col s12 m6">
-                    <div class="card">
-                        <div class="card-image">
-                            <img src="public/img/car_2.jpeg" height="500">
-                            <span class="card-title">Card Title</span>
-                            <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
-                        </div>
-                        <div class="card-content">
-                            <table class="striped center">
-                                <tbody>
-                                <tr>
-                                    <td>Experience</td>
-                                    <td>3/5</td>
-                                </tr>
-                                <tr>
-                                    <td>Price</td>
-                                    <td>$5,000.00 per day</td>
-                                </tr>
-                                <tr>
-                                    <td>Deposit</td>
-                                    <td>$5,000.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Capacity</td>
-                                    <td>5 person(s)</td>
-                                </tr>
-                                <tr>
-                                    <td>Min Days</td>
-                                    <td>2</td>
-                                </tr>
-                                <tr>
-                                    <td>Condition</td>
-                                    <td>Good</td>
-                                </tr>
-                                <tr>
-                                    <td>Transmission</td>
-                                    <td>Manual</td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-                <div class="col s12 m6">
-                    <div class="card">
-                        <div class="card-image">
-                            <img src="public/img/car_3.jpeg" height="500">
-                            <span class="card-title">Card Title</span>
-                            <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
-                        </div>
-                        <div class="card-content">
-                            <table class="striped center">
-                                <tbody>
-                                <tr>
-                                    <td>Experience</td>
-                                    <td>3/5</td>
-                                </tr>
-                                <tr>
-                                    <td>Price</td>
-                                    <td>$5,000.00 per day</td>
-                                </tr>
-                                <tr>
-                                    <td>Deposit</td>
-                                    <td>$5,000.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Capacity</td>
-                                    <td>5 person(s)</td>
-                                </tr>
-                                <tr>
-                                    <td>Min Days</td>
-                                    <td>2</td>
-                                </tr>
-                                <tr>
-                                    <td>Condition</td>
-                                    <td>Good</td>
-                                </tr>
-                                <tr>
-                                    <td>Transmission</td>
-                                    <td>Manual</td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-                <div class="col s12 m6">
-                    <div class="card">
-                        <div class="card-image">
-                            <img src="public/img/car_4.jpeg" height="500">
-                            <span class="card-title">Card Title</span>
-                            <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
-                        </div>
-                        <div class="card-content">
-                            <table class="striped center">
-                                <tbody>
-                                <tr>
-                                    <td>Experience</td>
-                                    <td>3/5</td>
-                                </tr>
-                                <tr>
-                                    <td>Price</td>
-                                    <td>$5,000.00 per day</td>
-                                </tr>
-                                <tr>
-                                    <td>Deposit</td>
-                                    <td>$5,000.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Capacity</td>
-                                    <td>5 person(s)</td>
-                                </tr>
-                                <tr>
-                                    <td>Min Days</td>
-                                    <td>2</td>
-                                </tr>
-                                <tr>
-                                    <td>Condition</td>
-                                    <td>Good</td>
-                                </tr>
-                                <tr>
-                                    <td>Transmission</td>
-                                    <td>Manual</td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-                <div class="col s12 m6">
-                    <div class="card">
-                        <div class="card-image">
-                            <img src="public/img/car_5.jpeg" height="500">
-                            <span class="card-title">Card Title</span>
-                            <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
-                        </div>
-                        <div class="card-content">
-                            <table class="striped center">
-                                <tbody>
-                                <tr>
-                                    <td>Experience</td>
-                                    <td>3/5</td>
-                                </tr>
-                                <tr>
-                                    <td>Price</td>
-                                    <td>$5,000.00 per day</td>
-                                </tr>
-                                <tr>
-                                    <td>Deposit</td>
-                                    <td>$5,000.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Capacity</td>
-                                    <td>5 person(s)</td>
-                                </tr>
-                                <tr>
-                                    <td>Min Days</td>
-                                    <td>2</td>
-                                </tr>
-                                <tr>
-                                    <td>Condition</td>
-                                    <td>Good</td>
-                                </tr>
-                                <tr>
-                                    <td>Transmission</td>
-                                    <td>Manual</td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-                <div class="col s12 m6">
-                    <div class="card">
-                        <div class="card-image">
-                            <img src="public/img/car_6.jpeg" height="500">
-                            <span class="card-title">Card Title</span>
-                            <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
-                        </div>
-                        <div class="card-content">
-                            <table class="striped center">
-                                <tbody>
-                                <tr>
-                                    <td>Experience</td>
-                                    <td>3/5</td>
-                                </tr>
-                                <tr>
-                                    <td>Price</td>
-                                    <td>$5,000.00 per day</td>
-                                </tr>
-                                <tr>
-                                    <td>Deposit</td>
-                                    <td>$5,000.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Capacity</td>
-                                    <td>5 person(s)</td>
-                                </tr>
-                                <tr>
-                                    <td>Min Days</td>
-                                    <td>2</td>
-                                </tr>
-                                <tr>
-                                    <td>Condition</td>
-                                    <td>Good</td>
-                                </tr>
-                                <tr>
-                                    <td>Transmission</td>
-                                    <td>Manual</td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-                <div class="col s12 m6">
-                    <div class="card">
-                        <div class="card-image">
-                            <img src="public/img/car_7.jpeg" height="500">
-                            <span class="card-title">Card Title</span>
-                            <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
-                        </div>
-                        <div class="card-content">
-                            <table class="striped center">
-                                <tbody>
-                                <tr>
-                                    <td>Experience</td>
-                                    <td>3/5</td>
-                                </tr>
-                                <tr>
-                                    <td>Price</td>
-                                    <td>$5,000.00 per day</td>
-                                </tr>
-                                <tr>
-                                    <td>Deposit</td>
-                                    <td>$5,000.00</td>
-                                </tr>
-                                <tr>
-                                    <td>Capacity</td>
-                                    <td>5 person(s)</td>
-                                </tr>
-                                <tr>
-                                    <td>Min Days</td>
-                                    <td>2</td>
-                                </tr>
-                                <tr>
-                                    <td>Condition</td>
-                                    <td>Good</td>
-                                </tr>
-                                <tr>
-                                    <td>Transmission</td>
-                                    <td>Manual</td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
+
+         
+        
+ 
+
+
             </div>
             <div class="row">
                 <ul class="pagination center">

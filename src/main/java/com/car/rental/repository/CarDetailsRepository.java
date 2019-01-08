@@ -10,4 +10,5 @@ import com.car.rental.model.CarDetails;
 public interface CarDetailsRepository extends CrudRepository<CarDetails, Long> {
 
 	Optional<List<CarDetails>> findByCarName(String carName);
+	Optional<List<CarDetails>> findByUser(String userid);
 }

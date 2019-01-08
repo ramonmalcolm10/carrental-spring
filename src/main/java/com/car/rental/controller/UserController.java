@@ -65,12 +65,5 @@ public class UserController {
 		return "login";
 	}
 	
-	@GetMapping("/index")
-	public String index( @AuthenticationPrincipal CustomUserDetails customUserDetails) {
-		System.out.println("Index");
-		System.out.println(customUserDetails.getEmail());
-		System.out.println(customUserDetails.getId());
-		return "index";
-	}
-	
+		
 }

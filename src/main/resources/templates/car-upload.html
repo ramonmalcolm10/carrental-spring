@@ -37,7 +37,7 @@ html {
 
 		<div class="col s12 z-depth-5 card-panel">
 			<form th:action="@{/car/upload}" th:object="${carDetails}"
-				method="post">
+				method="post" enctype="multipart/form-data">
 				<div class="row">
 					<div class="input-field col s12 center">
 						<p class="center login-form-text">Upload Car For Rent</p>
@@ -45,22 +45,116 @@ html {
 				</div>
 				<div class="row margin">
 					<div class="input-field col s12">
-						<i class="material-icons prefix">account_circle</i> 
-							<select th:field="*{carName}">
-							<option
-								th:each="car : ${T(com.car.rental.model.Cars).values()}"
-								th:value="${car}" th:text="${car}"></option>
-						</select>
-						 <label for="carName" data-error="wrong" data-success="right">Type of Car</label>
+						<i class="material-icons prefix">account_circle</i> <input type="text"
+							th:field="*{carName}">
+						 <label for="carName" data-error="wrong" data-success="right">Type
+							of Car</label>
 
-						<div th:if="${#fields.hasErrors('car')}">
-							<p th:each="err : ${#fields.errors('car')}" th:text="${err}"
+						<div th:if="${#fields.hasErrors('carName')}">
+							<p th:each="err : ${#fields.errors('carName')}" th:text="${err}"
 								style="color: red"></p>
 						</div>
 
 					</div>
 				</div>
-		
+
+				<div class="row margin">
+					<div class="input-field col s12">
+						<i class="material-icons prefix">contact_phone</i> <input
+							th:field="*{price}" type="text"> <label for="price"
+							data-error="wrong" data-success="right">Rent Per Day Cost</label>
+						<div th:if="${#fields.hasErrors('price')}">
+							<p th:each="err : ${#fields.errors('price')}" th:text="${err}"
+								style="color: red"></p>
+						</div>
+					</div>
+				</div>
+
+
+				<div class="row margin">
+					<div class="input-field col s12">
+						<i class="material-icons prefix">contact_phone</i> <input
+							th:field="*{deposit}" type="text"> <label for="deposit"
+							data-error="wrong" data-success="right">Deposit Amount</label>
+						<div th:if="${#fields.hasErrors('deposit')}">
+							<p th:each="err : ${#fields.errors('deposit')}" th:text="${err}"
+								style="color: red"></p>
+						</div>
+					</div>
+				</div>
+
+				<div class="row margin">
+					<div class="input-field col s12">
+						<i class="material-icons prefix">contact_phone</i> <input
+							th:field="*{capacity}" type="text"> <label for="capacity"
+							data-error="wrong" data-success="right">Capacity</label>
+						<div th:if="${#fields.hasErrors('capacity')}">
+							<p th:each="err : ${#fields.errors('capacity')}" th:text="${err}"
+								style="color: red"></p>
+						</div>
+					</div>
+				</div>
+
+				
+
+
+				<div class="row margin">
+					<div class="input-field col s12">
+						<i class="material-icons prefix">contact_phone</i> <input
+							th:field="*{minDays}" type="text"> <label for="minDays"
+							data-error="wrong" data-success="right">Min Days</label>
+						<div th:if="${#fields.hasErrors('minDays')}">
+							<p th:each="err : ${#fields.errors('minDays')}" th:text="${err}"
+								style="color: red"></p>
+						</div>
+					</div>
+				</div>
+
+
+				<div class="row margin">
+					<div class="input-field col s12">
+						<i class="material-icons prefix">account_circle</i> <input type="text"
+							th:field="*{carCondition}">
+						 <label for="carCondition" data-error="wrong" data-success="right">Car Condition</label>
+
+						<div th:if="${#fields.hasErrors('carCondition')}">
+							<p th:each="err : ${#fields.errors('carCondition')}"
+								th:text="${err}" style="color: red"></p>
+						</div>
+
+					</div>
+				</div>
+
+				<div class="row margin">
+					<div class="input-field col s12">
+						<i class="material-icons prefix">account_circle</i> <input type="text"
+							th:field="*{transmission}">
+					 <label for="transmission" data-error="wrong" data-success="right">Transmission</label>
+
+						<div th:if="${#fields.hasErrors('transmission')}">
+							<p th:each="err : ${#fields.errors('transmission')}"
+								th:text="${err}" style="color: red"></p>
+						</div>
+
+					</div>
+				</div>
+
+				<div class="row margin">
+				
+				  <div class="file-field input-field">
+				      <div class="btn">
+				        <span>File</span>
+				        <input type="file" name="file">
+				      </div>
+				      <div class="file-path-wrapper">
+				        <input class="file-path validate"   type="text">
+				      </div>
+				    </div>
+				
+				
+				</div>
+
+
 				<!--<div class="row margin">
                         <div class="input-field col s12">
                             <i class="material-icons prefix">lock_outline</i>
